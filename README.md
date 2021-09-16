@@ -28,9 +28,9 @@ python manage.py loaddata fixtures/1-usuarios.json
 python manage.py loaddata fixtures/2-projetos.json
 ```
 
-8 - Para rodar o sistema localmente o comando é o seguinte:
+8 - Para rodar e testar o sistema localmente o comando é o seguinte:
 ```
-python manage.py runserver
+python manage.py runserver --insecure
 ```
 
 Você poderá acessar o sistema localmente na porta 8000 do localhost!
