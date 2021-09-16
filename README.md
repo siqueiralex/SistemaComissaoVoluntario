@@ -1,8 +1,8 @@
 # Sistema de Apoio à Comissão de Serviço Voluntário
 
 Para máquinas Linux, é necessário que tenha instalado Python 3.8 e as libs: 'libpq-dev' e 'python-dev'
-Para demais situações, pesquisar libs necessárias para que o PostgreSQL funcione bem com Python3.8
 
+Para demais situações, pesquisar libs necessárias para que o PostgreSQL funcione bem com Python3.8
 
 ## Instruções de Deploy
 
