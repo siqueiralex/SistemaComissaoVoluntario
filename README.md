@@ -10,7 +10,7 @@ Para demais situações, pesquisar libs necessárias para que o PostgreSQL funci
 
 2 - Se for utilizar um banco de dados PostgreSQL, adicione as variaveis de ambiente: DB_NAME, DB_USER, DB_PASSWORD e DB_HOST
 
-3 - Se NÃO for utilizar Postgresql, remova do arquivo requirements.txt a linha com o psycopg2
+3 - Se NÃO for utilizar PostgreSQL, remova do arquivo requirements.txt a linha com o psycopg2
 
 4 - Instale as bibliotecas contidas no arquivo requirements.txt (recomendo utilizar um virtualenv)
 
