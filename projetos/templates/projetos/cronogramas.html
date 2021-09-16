@@ -1,0 +1,52 @@
+{% extends "main.html" %} {% load user_tags %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/cronogramas.css' %}"> {% endblock %} {% block content %} {% include "navbar.html" %}
+
+<div class="container text-center mt-5">
+    <!-- <h2> <strong>CRONOGRAMAS DE PLANO DE AÇÃO:</strong> </h2> -->
+    <a class="card-link btn btn-outline-success mt-2" href="{% url 'criar_cronograma' %}">Novo Período</a>
+    <!-- <div class="row"> -->
+        <!-- <div class="col-lg-6 col-sm-12"> -->
+
+
+            {% if ultimo_cadastrado %}
+            <!-- <h4 class="pt-5"> ÚLTIMO CADASTRADO:</h4> -->
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <!-- <div class="card col-8 mt-3 mb-3"> -->
+                        <h6 class="mb-4">último criado:</h6>
+                        <div class="card-body">
+                            <h3 class="card-title mb-4"><strong>{{ultimo_cadastrado}}</strong></h3>
+                            <a class="card-link btn btn-info mb-2" href="{%url 'cronograma' ultimo_cadastrado.id%}">Planos de Ação</a>
+                            <a class="card-link btn btn-warning mb-2" href="{%url 'editar_cronograma' ultimo_cadastrado.id%}">Editar Cronograma</a>
+                            <a class="card-link btn btn-danger mb-2" href="{%url 'apagar_cronograma_confirma' ultimo_cadastrado.id%}">Apagar</a>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            {% endif %}    
+
+
+
+            {% if cronogramas %}
+            <h4 class="pt-5"> Anteriores:</h4>
+            <div class="row">
+                {% for cronograma in cronogramas %}
+                <div class="col-sm-12 col-lg-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{cronograma}}</h5>
+                            <a class="card-link btn btn-outline-info mb-1" href="{%url 'cronograma' cronograma.id%}">Planos de Ação</a>
+                            <a class="card-link btn btn-outline-warning mb-1" href="{%url 'editar_cronograma' cronograma.id%}">Editar Cronograma</a>
+                            <a class="card-link btn btn-outline-danger mb-1" href="{%url 'apagar_cronograma' cronograma.id%}">Apagar</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        <!-- </div> -->
+    
+    <!-- </div> -->
+
+</div>
+{% endblock %}

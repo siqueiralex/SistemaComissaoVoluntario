@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="/"><span class="navbar-brand">Serviço Voluntário SSE-DF</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'distribuicao' %}">Distribuição <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'atesto_impedimentos' %}">Atestos de Impedimento<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'homologacoes' %}">Homologações<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'cronogramas' %}">Planos de Ação <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+        {% if request.user.is_authenticated %}
+        <span class="navbar-text">
+            Você está logado como: {{request.user}}, 
+            &nbsp;
+        </span>
+        <span class="navbar-text">
+            <a href="{% url 'alterar_senha' %}">alterar senha</a>  
+            &nbsp;   
+        </span>
+        <span class="navbar-text">
+            <a href="{% url 'logout' %}">sair</a>
+            &nbsp;
+        </span>
+        {% else %}
+        <span class="navbar-text">
+          <a href="{% url 'login' %}">login</a>
+          &nbsp;
+        </span>
+        {% endif %}
+        
+    </div>
+  </nav>
+
+  
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}" role="alert">
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+      </div>
+      {% endfor %}
+  </ul>
+  {% endif %}

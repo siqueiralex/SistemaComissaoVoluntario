@@ -1,0 +1,66 @@
+{% extends "main.html" %}
+{% load user_tags %}
+
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/cronograma_form.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+<div class="container mt-5">
+    <div class="row justify-content-start mt-5">
+        <div class="col-2">
+
+            <a class="btn btn-secondary mb-2" href="{% url 'cronogramas' %}">Voltar</a>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+        
+        <h4>Novo Período:</h4>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="" method="POST">
+
+                {% csrf_token %}
+
+                    <div class="form-group" >
+                        <label for="{{ form.inicio_servicos.id_for_label }}">Inicio do Serviço Voluntário:</label>
+                        {{ form.inicio_servicos }}
+                        {% for  error in form.inicio_servicos.errors %}
+                        <div class="error  text-danger">{{error}}</div>
+                        {% endfor%}
+                        
+                    </div>
+
+
+                    <div class="form-group" >
+                        <label for="{{ form.fim_servicos.id_for_label }}">Fim do Serviço Voluntário:</label>
+                        {{ form.fim_servicos }}
+                        {% for  error in form.fim_servicos.errors %}
+                        <div class="error  text-danger">{{error}}</div>
+                        {% endfor%}
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-2 mt-2 mb-5">
+
+                            <button type="submit" class="btn btn-primary">SALVAR</button>
+                        </div>
+                    </div>
+                
+    
+
+
+            </form>
+    </div>
+    </div>
+</div>
+
+    
+{% endblock %}

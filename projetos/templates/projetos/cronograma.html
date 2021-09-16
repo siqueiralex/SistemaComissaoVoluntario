@@ -1,0 +1,71 @@
+{% extends "main.html" %}
+{% load user_tags %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cronograma.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+
+    <div class="container mt-6 text-center" >
+        
+        <div class="row justify-content-start mt-5">
+            <a class="btn btn-secondary mb-2" href="{% url 'cronogramas'%}">Voltar</a>
+        </div>
+        
+        <div class="row justify-content-start mt-2">
+            <div class="col">
+                <h3>{{cronograma}}</h3> 
+            </div>
+        </div>
+
+
+        <div class="mb-4 mt-4 text-center">
+            <h4> Planos de Ação: </h4>
+            <div class="row">
+                {% for unidade in unidades%}
+                <div class="col-lg-3 col-sm-6 text-center mb-2">
+                        <a href="{% url 'atividades' cronograma.id unidade.id%}" class="custom-card">
+                        <div class="card {% if unidade.qtde_atividades > 0 %} bg-enviou {% else %}  {% endif %}">
+                                
+                                <div class=" card-body "> 
+                                   <div class= " unidade">
+                                       <strong >{{unidade.sigla}}</strong> 
+                                   </div>
+                                <!-- <div><a class = "card-link btn btn-success" href="{% url 'atividades' cronograma.id unidade.id%}">Atividades</a></div> -->
+                               </div>
+                               <div class="mb-2 qtdeAtiv"><strong>{{unidade.qtde_atividades}}</strong> atividade(s) cadastradas</div>
+        
+                            </div>
+                        </a>
+                    </div>
+                {% endfor%}
+
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <a class= "card-link btn btn-outline-info" href="{% url 'exportar_projetos_excel' cronograma.id%}"> Gerar Resumo de Atividades </a>
+        </div>
+
+
+        <div class="container vagas" >
+            <h5>Exportar Vagas:</h5>
+
+            <div class="datas">
+                {% for data in cronograma.lista_de_datas %}    
+                    <div class="data">
+                        <a href="{% url 'exportar_vagas_excel' cronograma.id data %}">{{data.day}}/{{data.month}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}

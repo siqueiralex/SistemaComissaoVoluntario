@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% load static%}
+
+{% block css%}
+
+<link rel="stylesheet" href="{% static 'css/distribuicao.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+
+<div class="container">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>Consolidado Já Classificado: {{form.file}}</div>
+        <div>Dia de Serviço Voluntário: {{form.dia}}</div>
+        <div>Linha do Header na Planilha: {{form.linha_header}}</div>
+        <div>Nome da Aba em que está a Classificação: {{form.nome_aba}}</div>
+        <div class="submit"><input class="botao btn btn-primary" type="submit" value="Gerar Distribuição"></div>
+    </form>
+
+</div>
+
+{% endblock %}

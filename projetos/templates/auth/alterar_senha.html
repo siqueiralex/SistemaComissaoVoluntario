@@ -1,0 +1,66 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+    
+    
+
+
+
+
+
+
+
+
+	<div class="d-flex justify-content-center align-items-center h-100 min-vh-100">
+		<div class="card align-self-center w-25 ">
+			<div class="card-header">
+				Alterar a senha
+			</div>
+			<div class="card-body">
+				<form method="POST">
+                    {%  csrf_token %}
+                   
+					<div class="form-group">
+						<label for="old_password">Senha antiga</label>
+
+						<input type="password" class="form-control {% if form.errors.old_password%}is-invalid{%endif%}" id="old_password" name="old_password">
+                        {% if form.errors.old_password%}
+                        <div class="invalid-feedback">
+							{{form.errors.old_password}}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+					<div class="alert alert-info" role="alert">
+						<li>Sua senha precisa conter pelo menos 8 caracteres.</li>
+						
+					</div>
+					<div class="form-group">
+						<label for="new_password1">Nova senha</label>
+						<input type="password" class="form-control {% if form.errors.new_password1%}is-invalid{%endif%}" id="new_password1" name="new_password1">
+                        {% if form.errors.new_password1%}
+                        <div class="invalid-feedback">
+							{{form.errors.new_password1}}
+                        </div>
+                        {% endif %}
+                    </div>
+					<div class=" form-group">
+						<label for="new_password2">Confirmar nova senha</label>
+
+						<input type="password" class="form-control {% if form.errors.new_password2%}is-invalid{%endif%}" id="new_password2" name="new_password2">
+                            
+                        {% if form.errors.new_password2%}
+                        <div class="invalid-feedback">
+							{{form.errors.new_password2}}
+                        </div>
+                        {% endif %}
+					</div>
+					<button type="submit" class="btn btn-dark btn-block">Alterar senha</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

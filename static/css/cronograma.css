@@ -1,0 +1,105 @@
+
+table {
+    font-size: .8em; 
+    text-align: center;
+}
+
+thead {
+    font-size: 1.1em;
+}
+
+.datas {
+    max-width: 500px;
+    display: flex;
+    /* flex:1; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+        
+
+}
+
+.data {
+    min-width: 70px!important;
+    min-height: 70px;
+    border: 2px solid grey;
+    margin: -1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* position: relative; */
+}
+
+.data > a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+    line-height: 70px;
+    min-width: 70px;
+}
+.data:hover {
+    background-color: grey;
+}
+
+.data > a:hover {
+    color: rgb(251, 253, 253);
+}
+
+
+.card-body {
+    font-size: larger; 
+    font-weight: bold;
+}
+
+.vagas {
+    padding:0px; 
+    margin: 50px auto; 
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.qtdeAtiv:hover {
+text-decoration: none !important;
+}
+.qtdeAtiv {
+    font-size: 13px;
+    color: rgb(88, 88, 88);
+    
+}
+
+.qtdeAtiv > strong{
+    font-size: 1.2em;
+    color: rgb(50,50,50);
+    
+
+}
+
+.bg-enviou {
+    background-color: rgba(223, 255, 229, 0.562);
+}
+
+.bg-nao-enviou {
+    background-color: rgba(255, 238, 215, 0.61);
+}
+
+.unidade {
+    font-size: 1.1em;
+}
+
+a.custom-card,
+a.custom-card:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    background-color: rgba(92, 92, 92, 0.233);
+}

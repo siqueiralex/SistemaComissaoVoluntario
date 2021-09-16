@@ -1,0 +1,33 @@
+{% extends "main.html" %} {% block content %}
+
+{% include "navbar.html" %}
+
+<div class="d-flex justify-content-center align-items-center h-100 min-vh-100">
+    <div class="col-md-4 col-lg-3">
+        <div class="card align-self-center">
+            <div class="card-header" style="text-align: center;">
+                Sistema de Voluntário SSE-DF
+            </div>
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="user">Usuário</label>
+
+                        <input type="text" class="form-control {% if login_error %} is-invalid {% endif %}" id="user" name="username" />
+                        <div class="invalid-feedback">
+                            {% if login_error %} {{login_error}} {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" />
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

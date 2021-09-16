@@ -1,0 +1,136 @@
+{% extends "main.html" %}
+{% load user_tags %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/atividade_form.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-start mt-5">
+        <div class="col">
+
+            <a class="btn btn-secondary mb-2" href="{% url 'atividades' cronograma.id unidade.id %}">Voltar</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6 col-sm-10">
+                            <div class="form-group" >
+                                {{ form.tipo_atividade.errors }}
+                                <label for="{{ form.tipo_atividadae.id_for_label }}" class="form-row-label">Tipo de Atividade:</label>
+                                {{ form.tipo_atividade }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.nome.id_for_label }}">Nome da Atividade:</label>
+                                {{ form.nome.errors }}
+                                {{ form.nome }}
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="{{ form.responsavel.id_for_label }}">Responsável:</label>
+                                {{ form.responsavel.errors }}
+                                {{ form.responsavel }}
+                            </div>
+                            
+                            <div class="form-row mb-2 justify-content-center">
+                                
+                                <div class="col-md-4" >
+                                    {{ form.horario_inicio.errors }}
+                                    <label for="{{ form.horario_inicio.id_for_label }}">Hora Início:</label>
+                                    {{ form.horario_inicio }} 
+                                </div>
+                                
+                                <div class="col-md-4" >
+                                    {{ form.horario_fim.errors }}
+                                    <label for="{{ form.horario_fim.id_for_label }}">Hora Fim:</label>
+                                    {{ form.horario_fim }}
+                                </div>
+            
+                            </div>
+
+                            <!-- {% for error in form.carga_horaria.errors %}
+                                <div class="card-subtitle text-danger">{{error}}</div>
+                            {% endfor%} -->
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+               
+                            <div class="row justify-content-center mt-5">
+                                <h6> Efetivo de voluntários por dia:</h6>   
+                            </div>
+                            <div class="efetivos row justify-content-left">
+
+
+                                {{ formset.management_form }}
+                                {% for f in formset %}
+                                    
+                                    <div class=" datas ">
+                                        <div class="card data">
+                                            <div class="card-header" >
+                                                <div class="{% if cronograma.lista_de_datas|index:forloop.counter0|fds %}fds {% endif %}">
+                                                    {{cronograma.lista_de_datas|index:forloop.counter0|day}}/ {{cronograma.lista_de_datas|index:forloop.counter0|month}}
+                                                </div>
+                                            </div>
+                                            <div class="card-body align-items-center">
+                                                
+                                                    {{ f.id }}
+                                                    {{ f.dia.as_hidden }}
+                                                    {{ f.efetivo }}
+                                                
+                                            </div>
+                                            <div class="mini-error">
+                                                {% for error in f.errors.efetivo %}
+                                                <p>{{error}}</p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                            
+                                    </div>  
+                                {% endfor %}
+                                        
+                            
+                            </div>
+            
+                    <div class="row justify-content-center">
+                        <div class="col-2 mt-2 mb-5">
+
+                            <button type="submit" class="btn btn-primary">SALVAR</button>
+                        </div>
+                    </div>
+                </div>
+                   
+            
+
+            </form>    
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    
+    
+{% endblock %}

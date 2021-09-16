@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% load static%}
+
+{% block css%}
+
+<link rel="stylesheet" href="{% static 'css/atesto-impedimento.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+<div class="container">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>Arquivo de Controle de Horas: {{form.file}}</div>
+        <div>Data Início: {{form.inicio}}</div>
+        <div>Data Fim: {{form.fim}}</div>
+        <div class="submit"><input class="botao btn btn-primary" type="submit" value="Gerar Atestos de Impedimento"></div>
+    </form>
+</div>
+
+{% endblock %}

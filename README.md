@@ -8,7 +8,7 @@
 
 3 - Se for utilizar um banco de dados Postgresql, adicione as variaveis de ambiente: DB_NAME, DB_USER, DB_PASSWORD e DB_HOST.
 
-4 - Caso queira utilizar banco SQLite3, edite o arquivo voluntario/settings/production.py comentando a parte de postgresql, e descomentando a parte de SQLite
+4 - Caso queira utilizar banco SQLite3, edite o arquivo voluntario/settings/production.py comentando a parte de postgresql e descomentando a parte de SQLite (o passo 3 será desnecessário nesse caso)
 
 6 - Faça o primeiro setup do banco de dados com os comandos:
 ```

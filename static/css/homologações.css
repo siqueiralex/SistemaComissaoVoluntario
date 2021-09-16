@@ -1,0 +1,16 @@
+    
+
+form {
+    margin: 100px auto;
+    width: 40%;
+    min-width: 300px;
+}
+form > div {
+    margin-top: 5px;
+} 
+.submit {
+    text-align: center;
+}
+.botao {
+    margin-top: 10px; width:70%
+}

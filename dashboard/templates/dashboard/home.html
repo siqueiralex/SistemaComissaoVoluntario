@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% load static%}
+
+{% block css%}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+<div class="container">
+    <h4><strong>ATENCÃO!</strong> Este site funciona melhor acessando pelo Google Chrome do seu PC.</h4>
+
+</div>
+
+{% endblock %}

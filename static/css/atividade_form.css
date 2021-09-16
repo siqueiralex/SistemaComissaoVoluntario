@@ -1,0 +1,45 @@
+.efetivos {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+
+.form-row  {
+    align-items:baseline;
+}
+.form-row > form-group {
+    font-size: .9em
+}
+
+.dia-efetivo {
+    width:65px; 
+    font-size:.9em;
+    border-radius: 0;
+    text-align: center;
+}
+
+.efetivo-diario {
+    display: flex
+}
+
+.fds {
+    background-color: bisque;
+}
+    
+.datas {
+    padding:0; 
+    text-align: center;
+    width: 71px;
+}
+
+.card {
+    border-radius: 0;
+}
+.card-header, .card-body {
+    padding:0;
+}
+.mini-error > p{
+    color:red !important;
+    font-size: .7em !important;
+}

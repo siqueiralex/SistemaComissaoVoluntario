@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% load static%}
+
+{% block css%}
+
+<link rel="stylesheet" href="{% static 'css/homologações.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+<div class="container">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>Arquivo de Controle de Horas: {{form.file}}</div>
+        <div>Data: {{form.dia}}</div>
+        <div class="submit"><input class="botao btn btn-primary" type="submit" value="Gerar Homologações"></div>
+    </form>
+</div>
+
+{% endblock %}
