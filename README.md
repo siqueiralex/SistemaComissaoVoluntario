@@ -8,7 +8,7 @@ Para demais situações, pesquisar libs necessárias para que o PostgreSQL funci
 
 1 - Clone o projeto
 
-2 - Se for utilizar um banco de dados Postgresql, adicione as variaveis de ambiente: DB_NAME, DB_USER, DB_PASSWORD e DB_HOST
+2 - Se for utilizar um banco de dados PostgreSQL, adicione as variaveis de ambiente: DB_NAME, DB_USER, DB_PASSWORD e DB_HOST
 
 3 - Se NÃO for utilizar Postgresql, remova do arquivo requirements.txt a linha com o psycopg2
 
