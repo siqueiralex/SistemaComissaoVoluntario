@@ -14,7 +14,7 @@ Para demais situações, pesquisar libs necessárias para que o PostgreSQL funci
 
 4 - Instale as bibliotecas contidas no arquivo requirements.txt (recomendo utilizar um virtualenv)
 
-5 - Caso queira utilizar banco SQLite3, edite o arquivo voluntario/settings/production.py comentando a parte de postgresql e descomentando a parte de SQLite (o passo 3 será desnecessário nesse caso)
+5 - Caso queira utilizar banco SQLite3, edite o arquivo voluntario/settings/production.py comentando a parte de postgresql e descomentando a parte de SQLite 
 
 6 - Faça o primeiro setup do banco de dados com os comandos:
 ```
