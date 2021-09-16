@@ -28,6 +28,13 @@ python manage.py loaddata fixtures/1-usuarios.json
 python manage.py loaddata fixtures/2-projetos.json
 ```
 
+8 - Gere os arquivos estaticos com o comando:
+
+```
+python manage.py collectstatic
+```
+
+
 8 - Para rodar e testar o sistema localmente o comando é o seguinte:
 ```
 python manage.py runserver --insecure
