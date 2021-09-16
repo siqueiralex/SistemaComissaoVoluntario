@@ -8,6 +8,7 @@ Para máquinas linux, é necessário que tenha instalado Python 3.8 e as libs: '
 1 - Clone o projeto
 
 2 - Se for utilizar um banco de dados Postgresql, adicione as variaveis de ambiente: DB_NAME, DB_USER, DB_PASSWORD e DB_HOST
+
     Se NÃO for utilizar Postgresql, remova do arquivo requirements.txt a linha com o psycopg2
 
 3 - Instale as bibliotecas contidas no arquivo requirements.txt (recomendo utilizar um virtualenv)
