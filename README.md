@@ -42,3 +42,5 @@ python manage.py runserver --insecure
 
 Você poderá acessar o sistema localmente na porta 8000 do localhost!
 
+
+# Para deploy em produção utilize WSGI
